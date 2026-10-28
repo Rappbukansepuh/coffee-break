@@ -1,0 +1,65 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../views/**/*.blade.php';
+
+/* Theme Colors */
+:root {
+    color-scheme: dark;
+    --color-brown: #2A1A0E;
+    --color-brown-dark: #1A1009;
+    --color-gold: #F2A900;
+    --color-gold-hover: #CC6F00;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-gold) var(--color-brown);
+}
+
+/* Alpine.js Cloak */
+[x-cloak] {
+    display: none !important;
+}
+
+/* Custom Scrollbar - Chrome, Edge, Safari */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-brown-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-gold);
+    border: 2px solid var(--color-brown-dark);
+    border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-gold-hover);
+}
+
+/* Selection */
+::selection {
+    color: var(--color-brown-dark);
+    background: var(--color-gold);
+}
+
+/* Accessible Focus */
+:focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 3px;
+}
+
+/* Respect Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
